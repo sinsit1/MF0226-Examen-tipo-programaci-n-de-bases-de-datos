@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UF2176 - SQL y Gestión de Datos</title>
+<link rel="stylesheet" href="style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJPK4BP119"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CJPK4BP119');
+</script>
+</head>
+<body>
+
+<header>
+    <h1>Pruebas de Bases de Datos</h1>
+    <p>UF2176 · SQL y Gestión de Datos</p>
+</header>
+
+<nav class="tabs">
+    <a href="uf2175.html">UF2175</a>
+    <a href="uf2176.html" class="active">UF2176</a>
+    <a href="uf2177.html">UF2177</a>
+</nav>
+
+<div class="container">
+
+<section class="card">
+<h2>Parte Teórica</h2>
+
+<div class="short-question">
+<h3>Pregunta 1. ¿Qué diferencia existe entre una clave primaria y una restricción UNIQUE?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">La clave primaria identifica de forma única cada registro y no admite NULL. UNIQUE evita duplicados pero puede admitir NULL.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 2. Explica para qué sirven CHECK y DEFAULT.</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">CHECK valida condiciones sobre los datos y DEFAULT asigna valores automáticos.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 3. ¿Qué ventajas aporta utilizar índices?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Mejoran la velocidad de búsqueda y consulta de registros.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 4. ¿Qué es un JOIN?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Permite combinar información procedente de varias tablas relacionadas.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 5. Diferencia entre INSERT y UPDATE.</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">INSERT añade registros nuevos y UPDATE modifica registros existentes.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 6. ¿Qué problemas ayudan a evitar las transacciones?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Evitan inconsistencias cuando varias operaciones deben completarse juntas.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 7. ¿Para qué sirve ALTER TABLE?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Permite modificar la estructura de una tabla existente.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 8. Indica los comandos para crear una vista, eliminar una tabla y confirmar una transacción.</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">CREATE VIEW, DROP TABLE y COMMIT.</div>
+</div>
+
+</section>
+
+<section class="card">
+<h2>Base de Datos de Ejemplo</h2>
+
+<p><strong>EMPLEADOS</strong></p>
+
+<table>
+<tr><th>id_empleado</th><th>nombre</th><th>departamento</th></tr>
+<tr><td>1</td><td>Ana</td><td>Ventas</td></tr>
+<tr><td>2</td><td>Luis</td><td>RRHH</td></tr>
+<tr><td>3</td><td>Marta</td><td>Marketing</td></tr>
+</table>
+
+<br>
+
+<p><strong>PROYECTOS</strong></p>
+
+<table>
+<tr><th>id_proyecto</th><th>nombre</th><th>presupuesto</th></tr>
+<tr><td>10</td><td>ERP</td><td>15000</td></tr>
+<tr><td>20</td><td>CRM</td><td>8000</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>Práctica SQL</h2>
+
+<div class="practice">
+<h3>Apartado a</h3>
+<p>Mostrar el nombre de todos los empleados.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>SELECT nombre FROM EMPLEADOS;</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado b</h3>
+<p>Mostrar los proyectos con presupuesto superior a 10000 €.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>SELECT * FROM PROYECTOS WHERE presupuesto > 10000;</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado c</h3>
+<p>Mostrar todos los proyectos ordenados por presupuesto descendente.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>SELECT * FROM PROYECTOS ORDER BY presupuesto DESC;</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado d</h3>
+<p>Insertar un nuevo empleado llamado Pedro.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>INSERT INTO EMPLEADOS VALUES (4,'Pedro','Soporte');</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado e</h3>
+<p>Incrementar un 10% el presupuesto del proyecto ERP.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>UPDATE PROYECTOS SET presupuesto = presupuesto * 1.10 WHERE id_proyecto = 10;</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado f</h3>
+<p>Eliminar proyectos con presupuesto inferior a 5000.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>DELETE FROM PROYECTOS WHERE presupuesto < 5000;</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado g</h3>
+<p>Crear una tabla CLIENTES.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>CREATE TABLE CLIENTES(id_cliente INT PRIMARY KEY,nombre VARCHAR(50));</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado h</h3>
+<p>Crear una vista con nombre y departamento.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>CREATE VIEW vista_empleados AS SELECT nombre,departamento FROM EMPLEADOS;</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado i</h3>
+<p>Añadir una columna email a EMPLEADOS.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>ALTER TABLE EMPLEADOS ADD email VARCHAR(100);</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado j</h3>
+<p>Explica una ventaja de las vistas.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution">Permiten simplificar consultas complejas y limitar el acceso a determinados datos.</div>
+</div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

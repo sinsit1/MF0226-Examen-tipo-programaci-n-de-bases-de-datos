@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UF2177 - Programación y Procedimientos</title>
+<link rel="stylesheet" href="style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJPK4BP119"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CJPK4BP119');
+</script>
+</head>
+<body>
+
+<header>
+    <h1>Pruebas de Bases de Datos</h1>
+    <p>UF2177 · Programación y Procedimientos Almacenados</p>
+</header>
+
+<nav class="tabs">
+    <button onclick="location.href='uf2175.html'">UF2175</button>
+    <button onclick="location.href='uf2176.html'">UF2176</button>
+    <button class="active">UF2177</button>
+</nav>
+
+<div class="container">
+
+<section class="card">
+<h2>Parte Teórica</h2>
+
+<div class="short-question">
+<h3>Pregunta 1. ¿Qué es un entorno de desarrollo integrado (IDE)?</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Un IDE es una aplicación que integra editor de código, depurador y otras herramientas para facilitar el desarrollo.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 2. ¿Qué es una variable y para qué se utiliza?</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Una variable es un espacio de memoria que almacena datos que pueden cambiar durante la ejecución.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 3. Explica la diferencia entre un procedimiento almacenado y una función.</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Una función devuelve un valor. Un procedimiento realiza acciones y puede recibir parámetros sin necesidad de devolver un valor.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 4. ¿Para qué sirve la estructura IF?</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Permite ejecutar instrucciones diferentes según se cumpla o no una condición.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 5. ¿Qué diferencia existe entre COMMIT y ROLLBACK?</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">COMMIT confirma los cambios realizados. ROLLBACK deshace los cambios no confirmados.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 6. ¿Qué función tiene un debugger?</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Permite analizar el programa paso a paso para detectar errores y comprobar valores.</div>
+</div>
+
+<div class="short-question">
+<h3>Pregunta 7. Indica dos ventajas de utilizar procedimientos almacenados.</h3>
+<textarea placeholder="Escribe tu respuesta..."></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Mejoran el rendimiento y permiten reutilizar lógica de negocio centralizada en la base de datos.</div>
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Práctica</h2>
+
+<p>Trabajaremos con una tabla llamada <strong>LIBROS</strong>.</p>
+
+<div class="practice">
+<h3>Apartado a) - Creación de tabla</h3>
+<p>Crea una tabla LIBROS con código, título, autor, precio y stock.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>
+CREATE TABLE LIBROS(
+ codigo INT PRIMARY KEY,
+ titulo VARCHAR(100),
+ autor VARCHAR(100),
+ precio DECIMAL(8,2),
+ stock INT
+);
+</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado b) - Inserción de registros</h3>
+<p>Inserta tres libros de ejemplo.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>
+INSERT INTO LIBROS VALUES
+(1,'El Quijote','Cervantes',19.95,10),
+(2,'1984','George Orwell',15.50,8),
+(3,'Fundación','Isaac Asimov',22.90,5);
+</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado c) - Procedimiento aumento fijo</h3>
+<p>Crea un procedimiento que incremente todos los precios un 5%.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>
+CREATE PROCEDURE aumentarPrecios()
+BEGIN
+ UPDATE LIBROS
+ SET precio = precio * 1.05;
+END;
+</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado d) - Procedimiento con parámetro</h3>
+<p>Crea un procedimiento que reciba un porcentaje y actualice los precios.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>
+CREATE PROCEDURE actualizarPrecios(
+ IN porcentaje DECIMAL(5,2)
+)
+BEGIN
+ UPDATE LIBROS
+ SET precio = precio * (1 + porcentaje/100);
+END;
+</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado e) - Insertar un libro</h3>
+<p>Crea un procedimiento para insertar nuevos libros.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>
+CREATE PROCEDURE insertarLibro(
+ IN p_codigo INT,
+ IN p_titulo VARCHAR(100),
+ IN p_autor VARCHAR(100),
+ IN p_precio DECIMAL(8,2),
+ IN p_stock INT
+)
+BEGIN
+ INSERT INTO LIBROS
+ VALUES(
+   p_codigo,
+   p_titulo,
+   p_autor,
+   p_precio,
+   p_stock
+ );
+END;
+</pre></div>
+</div>
+
+<div class="practice">
+<h3>Apartado f) - Ejecución</h3>
+<p>Ejecuta los procedimientos anteriores.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution"><pre>
+CALL aumentarPrecios();
+
+CALL actualizarPrecios(10);
+
+CALL insertarLibro(
+4,
+'Clean Code',
+'Robert C. Martin',
+34.95,
+7
+);
+</pre></div>
+</div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

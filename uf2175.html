@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UF2175 - Examen de Práctica</title>
+<link rel="stylesheet" href="style.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJPK4BP119"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CJPK4BP119');
+</script>
+</head>
+<body>
+
+<header>
+<h1>Pruebas de Bases de Datos</h1>
+<p>UF2175 · Examen de práctica</p>
+</header>
+
+<nav class="tabs">
+<button class="active" onclick="location.href='uf2175.html'">UF2175</button>
+<button onclick="location.href='uf2176.html'">UF2176</button>
+<button onclick="location.href='uf2177.html'">UF2177</button>
+</nav>
+
+<div class="container">
+
+<h2>UF2175</h2>
+
+<p>Usa tu index original para las 20 preguntas tipo test. Este archivo conserva además las preguntas cortas y el caso práctico.</p>
+
+<section class="card">
+<h2>Preguntas Cortas</h2>
+
+<div class="short-question">
+<h3>Explica qué es la independencia de los datos.</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">La independencia de los datos permite modificar la estructura física o lógica sin afectar a las aplicaciones.</div>
+</div>
+
+<div class="short-question">
+<h3>¿Qué función tiene una clave ajena?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Una clave ajena permite relacionar registros de una tabla con otra.</div>
+</div>
+
+<div class="short-question">
+<h3>¿Qué ventajas aporta la normalización?</h3>
+<textarea></textarea>
+<button class="check-btn">Comprobar</button>
+<div class="feedback">Reduce redundancias y mejora la integridad de los datos.</div>
+</div>
+</section>
+
+<section class="card">
+
+<h2>Caso Práctico</h2>
+
+<p>Una biblioteca desea almacenar información sobre:</p>
+
+<ul>
+<li>Libros</li>
+<li>Socios</li>
+<li>Préstamos</li>
+<li>Autores</li>
+</ul>
+
+<div class="practice">
+<h3>Apartado 1 - Entidades y atributos</h3>
+<p>Identifica las entidades y sus atributos principales.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution">
+<strong>Entidades:</strong>
+<ul>
+<li>Libro</li>
+<li>Socio</li>
+<li>Préstamo</li>
+<li>Autor</li>
+</ul>
+<strong>Atributos:</strong>
+<ul>
+<li>Libro → ISBN, título, editorial</li>
+<li>Socio → código, nombre, teléfono</li>
+<li>Préstamo → fecha_inicio, fecha_fin</li>
+<li>Autor → código, nombre</li>
+</ul>
+</div>
+</div>
+
+<div class="practice">
+<h3>Apartado 2 - Relaciones</h3>
+<p>Indica las relaciones y cardinalidades.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution">
+Autor 1:N Libro<br><br>
+Socio 1:N Préstamo<br><br>
+Libro 1:N Préstamo
+</div>
+</div>
+
+<div class="practice">
+<h3>Apartado 3 - Modelo relacional</h3>
+<p>Diseña las tablas y sus claves.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution">
+AUTORES(id_autor PK, nombre)<br><br>
+LIBROS(isbn PK, titulo, editorial, id_autor FK)<br><br>
+SOCIOS(id_socio PK, nombre, telefono)<br><br>
+PRESTAMOS(id_prestamo PK, fecha_inicio, fecha_fin, isbn FK, id_socio FK)
+</div>
+</div>
+
+<div class="practice">
+<h3>Apartado 4 - Normalización</h3>
+<p>Explica en qué forma normal se encuentran las tablas.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution">
+Las tablas cumplen 1FN, 2FN y 3FN. No existen grupos repetitivos ni dependencias parciales o transitivas.
+</div>
+</div>
+
+<div class="practice">
+<h3>Apartado 5 - Restricciones de integridad</h3>
+<p>Propón dos restricciones de integridad.</p>
+<button class="solution-btn">Ver solución</button>
+<div class="solution">
+1. El ISBN debe ser único.<br><br>
+2. Un préstamo no puede referenciar un socio inexistente.
+</div>
+</div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
