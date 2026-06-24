@@ -140,14 +140,14 @@ gtag('config', 'G-CJPK4BP119');
 <h3>Apartado d</h3>
 <p>Insertar un nuevo empleado llamado Pedro.</p>
 <button class="solution-btn">Ver solución</button>
-<div class="solution"><pre>INSERT INTO EMPLEADOS VALUES (4,'Pedro','Soporte');</pre></div>
+<div class="solution"><pre>INSERT INTO EMPLEADOS (id_empleado, nombre) VALUES (4, 'Pedro');</pre></div>
 </div>
 
 <div class="practice">
 <h3>Apartado e</h3>
 <p>Incrementar un 10% el presupuesto del proyecto ERP.</p>
 <button class="solution-btn">Ver solución</button>
-<div class="solution"><pre>UPDATE PROYECTOS SET presupuesto = presupuesto * 1.10 WHERE id_proyecto = 10;</pre></div>
+<div class="solution"><pre>UPDATE PROYECTOS SET presupuesto = presupuesto * 1.10 WHERE nombre = 'ERP';</pre></div>
 </div>
 
 <div class="practice">

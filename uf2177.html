@@ -94,11 +94,11 @@ gtag('config', 'G-CJPK4BP119');
 <button class="solution-btn">Ver solución</button>
 <div class="solution"><pre>
 CREATE TABLE LIBROS(
- codigo INT PRIMARY KEY,
- titulo VARCHAR(100),
- autor VARCHAR(100),
- precio DECIMAL(8,2),
- stock INT
+   codigo NUMBER PRIMARY KEY,
+   titulo VARCHAR2(100),
+   autor VARCHAR2(100),
+   precio NUMBER(8,2),
+   stock NUMBER
 );
 </pre></div>
 </div>
@@ -120,11 +120,13 @@ INSERT INTO LIBROS VALUES
 <p>Crea un procedimiento que incremente todos los precios un 5%.</p>
 <button class="solution-btn">Ver solución</button>
 <div class="solution"><pre>
-CREATE PROCEDURE aumentarPrecios()
+CREATE OR REPLACE PROCEDURE aumentarPrecios
+IS
 BEGIN
- UPDATE LIBROS
- SET precio = precio * 1.05;
+   UPDATE LIBROS
+   SET precio = precio * 1.05;
 END;
+/
 </pre></div>
 </div>
 
@@ -133,13 +135,15 @@ END;
 <p>Crea un procedimiento que reciba un porcentaje y actualice los precios.</p>
 <button class="solution-btn">Ver solución</button>
 <div class="solution"><pre>
-CREATE PROCEDURE actualizarPrecios(
- IN porcentaje DECIMAL(5,2)
+CREATE OR REPLACE PROCEDURE actualizarPrecios(
+   p_porcentaje NUMBER
 )
+IS
 BEGIN
- UPDATE LIBROS
- SET precio = precio * (1 + porcentaje/100);
+   UPDATE LIBROS
+   SET precio = precio * (1 + p_porcentaje/100);
 END;
+/
 </pre></div>
 </div>
 
@@ -148,23 +152,25 @@ END;
 <p>Crea un procedimiento para insertar nuevos libros.</p>
 <button class="solution-btn">Ver solución</button>
 <div class="solution"><pre>
-CREATE PROCEDURE insertarLibro(
- IN p_codigo INT,
- IN p_titulo VARCHAR(100),
- IN p_autor VARCHAR(100),
- IN p_precio DECIMAL(8,2),
- IN p_stock INT
+CREATE OR REPLACE PROCEDURE insertarLibro(
+   p_codigo NUMBER,
+   p_titulo VARCHAR2,
+   p_autor VARCHAR2,
+   p_precio NUMBER,
+   p_stock NUMBER
 )
+IS
 BEGIN
- INSERT INTO LIBROS
- VALUES(
-   p_codigo,
-   p_titulo,
-   p_autor,
-   p_precio,
-   p_stock
- );
+   INSERT INTO LIBROS
+   VALUES(
+      p_codigo,
+      p_titulo,
+      p_autor,
+      p_precio,
+      p_stock
+   );
 END;
+/
 </pre></div>
 </div>
 
@@ -173,17 +179,26 @@ END;
 <p>Ejecuta los procedimientos anteriores.</p>
 <button class="solution-btn">Ver solución</button>
 <div class="solution"><pre>
-CALL aumentarPrecios();
+BEGIN
+   aumentarPrecios;
+END;
+/
 
-CALL actualizarPrecios(10);
+BEGIN
+   actualizarPrecios(10);
+END;
+/
 
-CALL insertarLibro(
-4,
-'Clean Code',
-'Robert C. Martin',
-34.95,
-7
-);
+BEGIN
+   insertarLibro(
+      4,
+      'Clean Code',
+      'Robert C. Martin',
+      34.95,
+      7
+   );
+END;
+/
 </pre></div>
 </div>
 
