@@ -19,56 +19,71 @@ gtag('config', 'G-CJPK4BP119');
 </head>
 <body>
 
-<header>
-    <h1>Pruebas de MF0226 - Programación de bases de datos relacionales</h1>
-    <p>Selecciona la Unidad Formativa que deseas practicar</p>
+<div class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html"><span class="brand-logo">DB</span><span class="brand-text">MF0226</span></a>
+        <nav class="tabs">
+            <a href="uf2175.html">UF2175</a>
+            <a href="uf2176.html">UF2176</a>
+            <a href="uf2177.html">UF2177</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Cambiar tema"></button>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="hero-inner">
+        <span class="eyebrow">Examen tipo · Práctica</span>
+        <h1>MF0226 · Programación de bases de datos relacionales</h1>
+        <p>Selecciona la Unidad Formativa que quieres practicar. Tus respuestas se guardan en este navegador para que puedas continuar más tarde.</p>
+    </div>
 </header>
 
-<div class="container">
+<main class="container">
 
-    <div class="card">
-        <h2>UF2175</h2>
-        <p>
-            Diseño conceptual, modelo Entidad-Relación,
-            normalización e integridad de datos.
-        </p>
+    <div class="unit-grid">
 
-        <button class="check-btn"
-                onclick="location.href='uf2175.html'">
-            Acceder a UF2175
-        </button>
+        <a class="unit-card" href="uf2175.html">
+            <span class="unit-code">UF2175</span>
+            <h2>Diseño de bases de datos relacionales</h2>
+            <p>Diseño conceptual, modelo Entidad-Relación, normalización e integridad de datos.</p>
+            <div class="unit-tags"><span>20 preguntas test</span><span>3 cortas</span><span>Caso práctico</span></div>
+            <span class="go">Empezar →</span>
+        </a>
+
+        <a class="unit-card" href="uf2176.html">
+            <span class="unit-code">UF2176</span>
+            <h2>SQL y gestión de datos</h2>
+            <p>SQL, consultas, restricciones, vistas y transacciones.</p>
+            <div class="unit-tags"><span>8 cortas</span><span>10 ejercicios SQL</span></div>
+            <span class="go">Empezar →</span>
+        </a>
+
+        <a class="unit-card" href="uf2177.html">
+            <span class="unit-code">UF2177</span>
+            <h2>Programación y procedimientos</h2>
+            <p>Procedimientos almacenados, funciones y programación PL/SQL.</p>
+            <div class="unit-tags"><span>7 cortas</span><span>6 ejercicios PL/SQL</span></div>
+            <span class="go">Empezar →</span>
+        </a>
+
     </div>
 
-    <div class="card">
-        <h2>UF2176</h2>
-        <p>
-            SQL, consultas, restricciones,
-            vistas y transacciones.
-        </p>
+    <section class="card tips">
+        <h2>Cómo usar las pruebas</h2>
+        <ul>
+            <li><strong>Test:</strong> pulsa una opción y se corrige al momento. La nota aparece abajo a la derecha.</li>
+            <li><strong>Preguntas cortas:</strong> escribe tu respuesta y luego compárala con la respuesta modelo.</li>
+            <li><strong>Prácticas:</strong> intenta resolver cada apartado antes de mirar la solución. Puedes copiar el código con un clic.</li>
+        </ul>
+    </section>
 
-        <button class="check-btn"
-                onclick="location.href='uf2176.html'">
-            Acceder a UF2176
-        </button>
-    </div>
+</main>
 
-    <div class="card">
-        <h2>UF2177</h2>
-        <p>
-            Procedimientos almacenados,
-            funciones y programación SQL.
-        </p>
-
-        <button class="check-btn"
-                onclick="location.href='uf2177.html'">
-            Acceder a UF2177
-        </button>
-    </div>
-
-</div>
-<footer style="text-align: center; padding: 20px; margin-top: 30px; font-size: 14px; color: #666;">
+<footer>
     Creado por Alexandra Moltó Grau
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

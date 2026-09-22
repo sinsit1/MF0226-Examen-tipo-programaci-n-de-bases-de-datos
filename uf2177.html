@@ -15,21 +15,36 @@ gtag('config', 'G-CJPK4BP119');
 </head>
 <body>
 
-<header>
-    <h1>Pruebas de Bases de Datos</h1>
-    <p>UF2177 · Programación y Procedimientos Almacenados</p>
+<div class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html"><span class="brand-logo">DB</span><span class="brand-text">MF0226</span></a>
+        <nav class="tabs">
+            <a href="uf2175.html">UF2175</a>
+            <a href="uf2176.html">UF2176</a>
+            <a href="uf2177.html" class="active" aria-current="page">UF2177</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Cambiar tema"></button>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="hero-inner">
+        <span class="eyebrow">UF2177 · Examen de práctica</span>
+        <h1>Programación y procedimientos almacenados</h1>
+        <p>Variables, estructuras de control, procedimientos, funciones y transacciones en PL/SQL.</p>
+        <div class="hero-meta"><span>7 preguntas cortas</span><span>6 ejercicios PL/SQL</span></div>
+    </div>
 </header>
 
-<nav class="tabs">
-    <button onclick="location.href='uf2175.html'">UF2175</button>
-    <button onclick="location.href='uf2176.html'">UF2176</button>
-    <button class="active">UF2177</button>
+<main class="container">
+
+<nav class="toc">
+    <a href="#teoria">Parte teórica</a>
+    <a href="#practica">Práctica</a>
 </nav>
 
-<div class="container">
-
-<section class="card">
-<h2>Parte Teórica</h2>
+<section id="teoria" class="card">
+<h2>Parte teórica</h2>
 
 <div class="short-question">
 <h3>Pregunta 1. ¿Qué es un entorno de desarrollo integrado (IDE)?</h3>
@@ -82,11 +97,11 @@ gtag('config', 'G-CJPK4BP119');
 
 </section>
 
-<section class="card">
+<section id="practica" class="card">
 
-<h2>Práctica</h2>
+<div class="section-title"><h2>Práctica</h2><button type="button" class="btn btn-ghost" data-toggle-all>Mostrar todas</button></div>
 
-<p>Trabajaremos con una tabla llamada <strong>LIBROS</strong>.</p>
+<div class="statement"><p>Trabajaremos con una tabla llamada <strong>LIBROS</strong>.</p></div>
 
 <div class="practice">
 <h3>Apartado a) - Creación de tabla</h3>
@@ -204,7 +219,11 @@ END;
 
 </section>
 
-</div>
+</main>
+
+<footer>
+    Creado por Alexandra Moltó Grau
+</footer>
 
 <script src="script.js"></script>
 </body>

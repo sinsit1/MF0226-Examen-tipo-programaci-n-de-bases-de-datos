@@ -16,19 +16,37 @@ gtag('config', 'G-CJPK4BP119');
 </head>
 <body>
 
-<header>
-<h1>Pruebas de Bases de Datos</h1>
-<p>UF2175 · Examen de práctica</p>
+<div class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html"><span class="brand-logo">DB</span><span class="brand-text">MF0226</span></a>
+        <nav class="tabs">
+            <a href="uf2175.html" class="active" aria-current="page">UF2175</a>
+            <a href="uf2176.html">UF2176</a>
+            <a href="uf2177.html">UF2177</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Cambiar tema"></button>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="hero-inner">
+        <span class="eyebrow">UF2175 · Examen de práctica</span>
+        <h1>Diseño de bases de datos relacionales</h1>
+        <p>Modelo Entidad-Relación, modelo relacional, normalización e integridad de datos.</p>
+        <div class="hero-meta"><span>20 preguntas test</span><span>3 preguntas cortas</span><span>Caso práctico</span></div>
+    </div>
 </header>
 
-<nav class="tabs">
-<button class="active" onclick="location.href='uf2175.html'">UF2175</button>
-<button onclick="location.href='uf2176.html'">UF2176</button>
-<button onclick="location.href='uf2177.html'">UF2177</button>
+<main class="container">
+
+<nav class="toc">
+    <a href="#test">Test</a>
+    <a href="#cortas">Preguntas cortas</a>
+    <a href="#caso">Caso práctico</a>
 </nav>
 
-<div class="container">
-<h2>20 Preguntas Tipo Test</h2>
+<section id="test" class="questions">
+<div class="section-title"><h2>Preguntas tipo test</h2></div>
 
 <div class="question">
     <h3>1. ¿Qué significa SGBD?</h3>
@@ -209,17 +227,21 @@ gtag('config', 'G-CJPK4BP119');
     <button class="answer">Los registros eliminados</button>
     <div class="result"></div>
 </div>
-<section class="card">
-<h2>Preguntas Cortas</h2>
+</section>
+
+<section id="cortas" class="card">
+<h2>Preguntas cortas</h2>
 <div class="short-question"><h3>1. Explica qué es la independencia de los datos.</h3><textarea></textarea><button class="check-btn">Comprobar</button><div class="feedback">La independencia de los datos permite modificar la estructura física o lógica sin afectar a las aplicaciones que utilizan la base de datos.</div></div>
 <div class="short-question"><h3>2. ¿Qué función tiene una clave ajena?</h3><textarea></textarea><button class="check-btn">Comprobar</button><div class="feedback">Una clave ajena permite relacionar registros de una tabla con otra tabla.</div></div>
 <div class="short-question"><h3>3. ¿Qué ventajas aporta la normalización de bases de datos?</h3><textarea></textarea><button class="check-btn">Comprobar</button><div class="feedback">Reduce redundancias, mejora la integridad de los datos y facilita el mantenimiento.</div></div>
 </section>
 
-<section class="card">
-<h2>Caso Práctico</h2>
+<section id="caso" class="card">
+<div class="section-title"><h2>Caso práctico</h2><button type="button" class="btn btn-ghost" data-toggle-all>Mostrar todas</button></div>
+<div class="statement">
 <p>Una biblioteca desea almacenar información sobre:</p>
 <ul><li>Libros</li><li>Socios</li><li>Préstamos</li><li>Autores</li></ul>
+</div>
 
 <div class="practice"><h3>Apartado 1 - Entidades y atributos</h3><p>Identifica las entidades y sus atributos principales.</p><button class="solution-btn">Ver solución</button><div class="solution"><strong>Entidades:</strong><ul><li>Libro</li><li>Socio</li><li>Préstamo</li><li>Autor</li></ul><strong>Atributos:</strong><ul><li>Libro → ISBN, título, editorial</li><li>Socio → código, nombre, teléfono</li><li>Préstamo → fecha_inicio, fecha_fin</li><li>Autor → código, nombre</li></ul></div></div>
 
@@ -233,7 +255,12 @@ gtag('config', 'G-CJPK4BP119');
 
 </section>
 
-</div>
+</main>
+
+<footer>
+    Creado por Alexandra Moltó Grau
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>

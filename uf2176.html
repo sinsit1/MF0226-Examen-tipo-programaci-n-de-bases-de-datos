@@ -15,21 +15,37 @@ gtag('config', 'G-CJPK4BP119');
 </head>
 <body>
 
-<header>
-    <h1>Pruebas de Bases de Datos</h1>
-    <p>UF2176 · SQL y Gestión de Datos</p>
+<div class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html"><span class="brand-logo">DB</span><span class="brand-text">MF0226</span></a>
+        <nav class="tabs">
+            <a href="uf2175.html">UF2175</a>
+            <a href="uf2176.html" class="active" aria-current="page">UF2176</a>
+            <a href="uf2177.html">UF2177</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Cambiar tema"></button>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="hero-inner">
+        <span class="eyebrow">UF2176 · Examen de práctica</span>
+        <h1>SQL y gestión de datos</h1>
+        <p>Restricciones, consultas, manipulación de datos, vistas y transacciones.</p>
+        <div class="hero-meta"><span>8 preguntas cortas</span><span>10 ejercicios SQL</span></div>
+    </div>
 </header>
 
-<nav class="tabs">
-    <a href="uf2175.html">UF2175</a>
-    <a href="uf2176.html" class="active">UF2176</a>
-    <a href="uf2177.html">UF2177</a>
+<main class="container">
+
+<nav class="toc">
+    <a href="#teoria">Parte teórica</a>
+    <a href="#datos">Base de datos de ejemplo</a>
+    <a href="#practica">Práctica SQL</a>
 </nav>
 
-<div class="container">
-
-<section class="card">
-<h2>Parte Teórica</h2>
+<section id="teoria" class="card">
+<h2>Parte teórica</h2>
 
 <div class="short-question">
 <h3>Pregunta 1. ¿Qué diferencia existe entre una clave primaria y una restricción UNIQUE?</h3>
@@ -89,31 +105,33 @@ gtag('config', 'G-CJPK4BP119');
 
 </section>
 
-<section class="card">
-<h2>Base de Datos de Ejemplo</h2>
+<section id="datos" class="card">
+<h2>Base de datos de ejemplo</h2>
 
-<p><strong>EMPLEADOS</strong></p>
+<p class="table-name">EMPLEADOS</p>
 
+<div class="table-wrap">
 <table>
 <tr><th>id_empleado</th><th>nombre</th><th>departamento</th></tr>
 <tr><td>1</td><td>Ana</td><td>Ventas</td></tr>
 <tr><td>2</td><td>Luis</td><td>RRHH</td></tr>
 <tr><td>3</td><td>Marta</td><td>Marketing</td></tr>
 </table>
+</div>
 
-<br>
+<p class="table-name">PROYECTOS</p>
 
-<p><strong>PROYECTOS</strong></p>
-
+<div class="table-wrap">
 <table>
 <tr><th>id_proyecto</th><th>nombre</th><th>presupuesto</th></tr>
 <tr><td>10</td><td>ERP</td><td>15000</td></tr>
 <tr><td>20</td><td>CRM</td><td>8000</td></tr>
 </table>
+</div>
 </section>
 
-<section class="card">
-<h2>Práctica SQL</h2>
+<section id="practica" class="card">
+<div class="section-title"><h2>Práctica SQL</h2><button type="button" class="btn btn-ghost" data-toggle-all>Mostrar todas</button></div>
 
 <div class="practice">
 <h3>Apartado a</h3>
@@ -187,7 +205,11 @@ gtag('config', 'G-CJPK4BP119');
 
 </section>
 
-</div>
+</main>
+
+<footer>
+    Creado por Alexandra Moltó Grau
+</footer>
 
 <script src="script.js"></script>
 </body>
